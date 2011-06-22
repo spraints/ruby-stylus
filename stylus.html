@@ -64,7 +64,7 @@ backed by the <a href="https://github.com/sstephenson/execjs">ExecJS</a> gem.mod
         <div class='highlight'><pre><span class="nb">require</span> <span class="s1">&#39;execjs&#39;</span>
 <span class="nb">require</span> <span class="s1">&#39;stylus/version&#39;</span>
 <span class="nb">require</span> <span class="s1">&#39;stylus/railtie&#39;</span> <span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="o">::</span><span class="no">Rails</span><span class="p">)</span>
-
+<span class="k">module</span> <span class="nn">Stylus</span>
   <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
     <span class="vc">@@compress</span> <span class="o">=</span> <span class="kp">false</span>
     <span class="vc">@@paths</span> <span class="o">=</span> <span class="o">[]</span>
