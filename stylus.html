@@ -12,7 +12,8 @@
     Jump To &hellip;
     <div id="jump_wrapper">
       <div id="jump_page">
-          <a class="source" href="generators/stylus/install_generator.html">install_generator.rb</a>
+          <a class="source" href="rails/generators/stylus/assets/assets_generator.html">assets_generator.rb</a>
+          <a class="source" href="rails/generators/stylus/scaffold/scaffold_generator.html">scaffold_generator.rb</a>
           <a class="source" href="stylus.html">stylus.rb</a>
           <a class="source" href="stylus/railtie.html">railtie.rb</a>
           <a class="source" href="stylus/tilt.html">tilt.rb</a>
@@ -28,27 +29,32 @@
     </tr>
   </thead>
   <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="nb">require</span> <span class="s1">&#39;execjs&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;stylus/version&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;stylus/tilt&#39;</span> <span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="o">::</span><span class="no">Tilt</span><span class="p">)</span>
+<span class="nb">require</span> <span class="s1">&#39;stylus/railtie&#39;</span> <span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="o">::</span><span class="no">Rails</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
     <tr id='section-Stylus'>
       <td class=docs>
         <div class="pilwrap">
           <a class="pilcrow" href="#section-Stylus">&#182;</a>
         </div>
         <h1>Stylus</h1>
-      </td>
-      <td class=code>
-        <div class='highlight'><pre></pre></div>
-      </td>
-    </tr>
-    <tr id='section-Usage'>
-      <td class=docs>
-        <div class="pilwrap">
-          <a class="pilcrow" href="#section-Usage">&#182;</a>
-        </div>
-        <p><code>stylus</code> is a bridge between your Ruby code and the <a href="https://github.com/LearnBoost/stylus">Stylus</a>
+
+<p><code>stylus</code> is a bridge between your Ruby code and the <a href="https://github.com/LearnBoost/stylus">Stylus</a>
 library that runs on Node.js. It&rsquo;s aims to be a replacement for the
 <a href="https://github.com/lucasmazza/stylus_rails">stylus_rails</a> gem and to support the Rails 3.1 asset pipeline
 (via <a href="https://github.com/rtomayko/tilt">Tilt</a>) and other scenarios,
-backed by the <a href="https://github.com/sstephenson/execjs">ExecJS</a> gem.module Stylus</p>
+backed by the <a href="https://github.com/sstephenson/execjs">ExecJS</a> gem.</p>
 
 <h2>Usage</h2>
 
@@ -61,10 +67,7 @@ backed by the <a href="https://github.com/sstephenson/execjs">ExecJS</a> gem.mod
 <p><code>Stylus.compile(File.read(&lsquo;application.styl&rsquo;), :compress =&gt; true)</code></p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="nb">require</span> <span class="s1">&#39;execjs&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;stylus/version&#39;</span>
-<span class="nb">require</span> <span class="s1">&#39;stylus/railtie&#39;</span> <span class="k">if</span> <span class="n">defined?</span><span class="p">(</span><span class="o">::</span><span class="no">Rails</span><span class="p">)</span>
-<span class="k">module</span> <span class="nn">Stylus</span>
+        <div class='highlight'><pre><span class="k">module</span> <span class="nn">Stylus</span>
   <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
     <span class="vc">@@compress</span> <span class="o">=</span> <span class="kp">false</span>
     <span class="vc">@@paths</span> <span class="o">=</span> <span class="o">[]</span>
@@ -93,7 +96,7 @@ backed by the <a href="https://github.com/sstephenson/execjs">ExecJS</a> gem.mod
         <div class="pilwrap">
           <a class="pilcrow" href="#section-4">&#182;</a>
         </div>
-        <p>Retrieves the plugins registered by <code>use</code>.</p>
+        <p>Retrieves all the registered plugins registered.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">plugins</span>
