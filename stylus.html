@@ -96,7 +96,7 @@ backed by the <a href="https://github.com/sstephenson/execjs">ExecJS</a> gem.</p
         <div class="pilwrap">
           <a class="pilcrow" href="#section-4">&#182;</a>
         </div>
-        <p>Retrieves all the registered plugins registered.</p>
+        <p>Retrieves all the registered plugins.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">plugins</span>
@@ -193,7 +193,7 @@ Also accepts a hash of options that will be merged with the global configuration
           <a class="pilcrow" href="#section-11">&#182;</a>
         </div>
         <p>Returns a <code>Hash</code> of the given <code>options</code> merged with the default configuration.
-It also concats the global load path with a given <code>Array</code>.</p>
+It also concats the global load path with a given <code>:paths</code> option.</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="k">def</span> <span class="nf">merge_options</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
