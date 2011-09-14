@@ -109,7 +109,11 @@ module Stylus
     # We're targeting the Runtime directly so we don't mess with other
     # gems using `ExecJS`.
     def backend
-      @@_backend ||= ExecJS::Runtimes::Node
+      @@_backend ||= ExecJS::ExternalRuntime.new(
+        :name        => 'Node.js (V8) (customized for stylus-ruby)',
+        :command     => ["nodejs", "node"],
+        :runner_path => File.expand_path("../stylus/node_stylus_runner.js", __FILE__)
+      )
     end
   end
 
